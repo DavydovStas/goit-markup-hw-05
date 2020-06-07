@@ -98,7 +98,7 @@ h6 {
 
 .navigation .list {
   margin-left: 85px;
-  padding: 32px 0px;
+  /* padding: 32px 0px; */
 }
 
 .navigation li + li {
@@ -120,12 +120,37 @@ h6 {
 }
 
 .navigation .link {
+  padding: 32px 0px;
   color: inherit;
+
+  height: 80px;
 }
 
-.adres .link:hover,
-.adres .link:focus {
-  color: var(--accent-color);
+.navigation li {
+  display: flex;
+
+  height: 100%;
+}
+
+/* Выделение активной страницы */
+
+.current {
+  position: relative;
+}
+
+.current::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+
+  border-radius: 2px;
 }
 
 .adres {
@@ -149,6 +174,13 @@ h6 {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.adres .link:hover,
+.adres .link:focus {
+  color: var(--accent-color);
 }
 
 .mail-icon {
@@ -254,6 +286,8 @@ h6 {
   background-color: rgba(255, 255, 255, 0.1);
 
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join .link:hover,
